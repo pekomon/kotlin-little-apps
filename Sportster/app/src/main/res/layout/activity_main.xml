@@ -7,21 +7,13 @@
     android:background="@android:color/holo_blue_light"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="189dp"
         android:layout_height="141dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bicycle" />
@@ -30,7 +22,7 @@
         android:id="@+id/sportNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="64dp"
         android:fontFamily="@font/capriola"
         android:text="Jogging"
         android:textSize="50sp"
@@ -56,25 +48,25 @@
         android:id="@+id/addNewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/capriola"
         android:text="Add new"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/randomizeButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newSportEditText"
+        app:layout_constraintVertical_bias="0.184" />
 
     <EditText
         android:id="@+id/newSportEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="115dp"
+        android:layout_marginTop="112dp"
         android:ems="10"
         android:hint="Name of new sport"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/addNewButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sportNameTextView" />
