@@ -1,9 +1,12 @@
 package com.example.pekomon.navigationdemo
 
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
@@ -15,8 +18,26 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        val action: String? = intent?.action
+        val data: Uri? = intent?.data
+        val params = data?.pathSegments
+        Log.d("xxxx", "data: $data - action: $action")
+        val zzz = data?.getQueryParameter("eka")
+        Log.d("xxxx", "zzz eka: $zzz")
+
+
+        // market link would be something like this:
+        // market://details?id=com.google.earth
+        if (zzz.equals("4")) {
+            setContentView(R.layout.activity_main)
+        } else {
+            setContentView(R.layout.activity_main)
+
+        }
+
         setSupportActionBar(toolbar)
+        toolbar.visibility = View.GONE
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         setUpBottomNavMenu(navController)
         setUpSideNavigationMenu(navController)
