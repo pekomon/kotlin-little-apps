@@ -29,13 +29,14 @@ fun SetupNavGraph(
                     type = NavType.IntType
                     defaultValue = -1
                     // Also possible to use nullable = true
-                } /*,
+                } ,
                 navArgument(DETAIL_SCREEN_ARGUMENT_KEY_NAME) {
                     type = NavType.StringType
-                } */
+                }
             )
         ) {
             Log.d("Args id", it.arguments?.getInt(DETAIL_SCREEN_ARGUMENT_KEY_ID).toString())
+            Log.d("Args name", it.arguments?.getString(DETAIL_SCREEN_ARGUMENT_KEY_NAME).toString())
             DetailScreen(navController = navController)
         }
     }
