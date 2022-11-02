@@ -1,4 +1,4 @@
-package com.example.pekomon.basicnavigationdemo
+package com.example.pekomon.basicnavigationdemo.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -12,9 +12,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.pekomon.basicnavigationdemo.navigation.Screen
+import com.example.pekomon.basicnavigationdemo.ui.theme.Purple80
 
 @Composable
-fun HomeScreen(
+fun DetailScreen(
     navController: NavController
 ) {
     Box(
@@ -22,17 +24,16 @@ fun HomeScreen(
         contentAlignment = Alignment.Center
     ) {
         Text(
-            modifier = Modifier
-                .clickable {
-                    navController.navigate(
-                        route = Screen.Detail.passIdAndName(
-                            id = 99,
-                            name = "Abba Acdc"
-                        )
-                    )
-                },
-            text = "Home",
-            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.clickable {
+                // navController.popBackStack() would also work if no need for arguments
+                navController.navigate(Screen.Home.route) {
+                    popUpTo(Screen.Home.route) {
+                        inclusive = true
+                    }
+                }
+            },
+            text = "Detail",
+            color = Purple80,
             fontSize = MaterialTheme.typography.headlineLarge.fontSize,
             fontWeight = FontWeight.Bold
         )
@@ -41,9 +42,6 @@ fun HomeScreen(
 
 @Composable
 @Preview(showBackground = true)
-fun HomeScreenPreview() {
-    HomeScreen(
-        navController = rememberNavController()
-    )
-    
+fun DetailScreenPreview() {
+    DetailScreen(rememberNavController())
 }

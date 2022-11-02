@@ -1,4 +1,4 @@
-package com.example.pekomon.basicnavigationdemo
+package com.example.pekomon.basicnavigationdemo.navigation
 
 const val DETAIL_SCREEN_ARGUMENT_KEY_ID = "id"
 const val DETAIL_SCREEN_ARGUMENT_KEY_NAME = "name"
@@ -19,4 +19,6 @@ sealed class Screen(val route: String) {
             return return "detail_screen?$DETAIL_SCREEN_ARGUMENT_KEY_ID=$id&$DETAIL_SCREEN_ARGUMENT_KEY_NAME=$name"
         }
     }
+    object Login: Screen(route = "login_screen")
+    object SignUp: Screen(route = "signup_screen")
 }

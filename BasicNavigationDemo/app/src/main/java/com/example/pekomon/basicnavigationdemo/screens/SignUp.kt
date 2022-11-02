@@ -1,4 +1,4 @@
-package com.example.pekomon.basicnavigationdemo
+package com.example.pekomon.basicnavigationdemo.screens
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -8,39 +8,36 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.pekomon.basicnavigationdemo.ui.theme.Purple80
 
 @Composable
-fun DetailScreen(
+fun SignUpScreen(
     navController: NavController
 ) {
     Box(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
         Text(
             modifier = Modifier.clickable {
-                // navController.popBackStack() would also work if no need for arguments
-                navController.navigate(Screen.Home.route) {
-                    popUpTo(Screen.Home.route) {
-                        inclusive = true
-                    }
-                }
+                navController.popBackStack()
             },
-            text = "Detail",
-            color = Purple80,
-            fontSize = MaterialTheme.typography.headlineLarge.fontSize,
+            text = "Sign Up",
+            color = Color.Blue,
+            fontSize = MaterialTheme.typography.titleMedium.fontSize,
             fontWeight = FontWeight.Bold
         )
     }
 }
 
+
 @Composable
 @Preview(showBackground = true)
-fun DetailScreenPreview() {
-    DetailScreen(rememberNavController())
+fun SignUpScreenPreview() {
+    SignUpScreen(navController = rememberNavController())
 }
