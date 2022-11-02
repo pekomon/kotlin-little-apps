@@ -16,6 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.pekomon.basicnavigationdemo.navigation.HOME_ROUTE
 import com.example.pekomon.basicnavigationdemo.navigation.Screen
 
 @Composable
@@ -41,9 +42,15 @@ fun LoginScreen(
             modifier = Modifier
                 .padding(top = 160.dp)
                 .clickable {
-                TODO("Nav back")
-            },
-            text = "Go back",
+                    /* In vase wanna Go home
+                    navController.navigate(HOME_ROUTE) {
+                        popUpTo(HOME_ROUTE)
+                    }
+                    */
+                    navController.popBackStack()
+                    navController.navigate(Screen.Detail.passIdAndName())
+                },
+            text = "Go to Detail",
             color = Color.DarkGray,
             fontSize = MaterialTheme.typography.bodyMedium.fontSize,
             fontWeight = FontWeight.Bold

@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.pekomon.basicnavigationdemo.navigation.nav_graph.SetupNavGraph
 import com.example.pekomon.basicnavigationdemo.ui.theme.BasicNavigationDemoTheme
 
 class MainActivity : ComponentActivity() {

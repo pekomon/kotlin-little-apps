@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.pekomon.basicnavigationdemo.navigation.AUTH_ROUTE
 import com.example.pekomon.basicnavigationdemo.navigation.Screen
 
 @Composable
@@ -44,9 +45,9 @@ fun HomeScreen(
             modifier = Modifier
                 .padding(top = 160.dp)
                 .clickable {
-                    TODO("Navigate to other navgraph")
+                    navController.navigate(AUTH_ROUTE)
                 },
-            text = "Login",
+            text = "Login / Sign Up",
             fontSize = MaterialTheme.typography.titleMedium.fontSize,
             fontWeight = FontWeight.Medium
         )
