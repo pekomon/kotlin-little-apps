@@ -7,6 +7,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.material3.*
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 
@@ -55,6 +56,7 @@ fun RowScope.AddItem(
     currentDestination: NavDestination?,
     navHostController: NavHostController
 ) {
+    val gg = NavigationBarItemDefaults.colors().iconColor(selected = false).value.copy(alpha = 0.38f)
     NavigationBarItem(
         label = {
                 Text(text = screen.title)
@@ -68,6 +70,10 @@ fun RowScope.AddItem(
         selected = currentDestination?.hierarchy?.any {
             it.route == screen.route
         } == true,
+        colors = NavigationBarItemDefaults.colors(
+            unselectedIconColor = NavigationBarItemDefaults.colors().iconColor(selected = false).value.copy(alpha = 0.38f),
+            unselectedTextColor = NavigationBarItemDefaults.colors().textColor(selected = false).value.copy(alpha = 0.38f),
+        ),
         onClick = {
             navHostController.navigate(screen.route)
         }

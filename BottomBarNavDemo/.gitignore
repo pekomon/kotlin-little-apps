@@ -14,6 +14,12 @@
 .cxx
 local.properties
 
+
+## xxx
+.idea/deploymentTargetDropDown.xml
+
+# xxx
+
 # Created by https://www.toptal.com/developers/gitignore/api/androidstudio,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=androidstudio,macos
 
