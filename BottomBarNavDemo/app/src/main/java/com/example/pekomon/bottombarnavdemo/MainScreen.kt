@@ -10,6 +10,7 @@ import androidx.compose.material3.*
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.navigation.NavGraph.Companion.findStartDestination
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -75,7 +76,10 @@ fun RowScope.AddItem(
             unselectedTextColor = NavigationBarItemDefaults.colors().textColor(selected = false).value.copy(alpha = 0.38f),
         ),
         onClick = {
-            navHostController.navigate(screen.route)
+            navHostController.navigate(screen.route) {
+                popUpTo(navHostController.graph.findStartDestination().id)
+                launchSingleTop = true
+            }
         }
     )
 }
