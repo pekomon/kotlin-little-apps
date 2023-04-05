@@ -1,4 +1,4 @@
-query Query {
+query CountriesQuery {
     countries {
         name
         capital
