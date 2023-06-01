@@ -1,3 +1,9 @@
+### PROJECT SPECIFIC ###
+# Firebase gooogle services definitions
+app/google-services.json
+
+
+
 *.iml
 .gradle
 /local.properties
