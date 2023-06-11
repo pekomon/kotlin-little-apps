@@ -23,7 +23,7 @@ import com.example.pekomon.firebaselogin.presentation.sign_in.UserData
 
 @Composable
 fun ProfileScreen(
-    userData: UserData,
+    userData: UserData?,
     onSignOut: () -> Unit
 ) {
     Column(
@@ -31,7 +31,7 @@ fun ProfileScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        userData.profilePictureUrl?.let {
+        userData?.profilePictureUrl?.let {
             AsyncImage(
                 model = userData.profilePictureUrl,
                 contentDescription = "Profile picture",
@@ -42,7 +42,7 @@ fun ProfileScreen(
             )
             Spacer(modifier = Modifier.height(16.dp))
         }
-        userData.username?.let {
+        userData?.username?.let {
             Text(
                 text = it,
                 textAlign = TextAlign.Center,
